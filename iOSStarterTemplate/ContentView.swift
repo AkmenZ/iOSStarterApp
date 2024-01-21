@@ -7,15 +7,48 @@
 
 import SwiftUI
 
+struct HomeView: View {
+    var body: some View {
+        Text("Home Page")
+            .font(.largeTitle)
+    }
+}
+
+struct SearchView: View {
+    var body: some View {
+        Text("Search Page")
+            .font(.largeTitle)
+    }
+}
+
+struct ProfileView: View {
+    var body: some View {
+        Text("Profile Page")
+            .font(.largeTitle)
+    }
+}
+
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        TabView {
+                    HomeView()
+                        .tabItem {
+                            Image(systemName: "house")
+                            Text("Home")
+                        }
+                    
+                    SearchView()
+                        .tabItem {
+                            Image(systemName: "magnifyingglass")
+                            Text("Search")
+                        }
+                    
+                    ProfileView()
+                        .tabItem {
+                            Image(systemName: "person")
+                            Text("Profile")
+                        }
+                }
     }
 }
 
